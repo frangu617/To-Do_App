@@ -12,7 +12,7 @@ export default function Login({ setToken, api }: LoginProps) {
 
     const login = async () => {
         try{
-            const res = await axios.post('${api}/login', { username, password });
+            const res = await axios.post(`${api}/login`, { username, password });
             setToken(res.data.access_token);
 
         } catch (error) {

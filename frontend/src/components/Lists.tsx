@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ListItems from "./ListItems";
+import { Trash2, User } from "lucide-react";
 
 interface ListProps {
   token: string;
@@ -71,6 +72,7 @@ export default function Lists({ token, api, logout }: ListProps) {
 
   return (
     <div className="space-y-4 card">
+      <h1> Your To-do List</h1>
       <div className="flex gap-2 listCard">
         <input
           value={newListName}
@@ -92,12 +94,12 @@ export default function Lists({ token, api, logout }: ListProps) {
           <>
             <li key={list.id || index} className="border-b p-2 listI">
               {list.name}
-              <button
+              <Trash2 size={25}
                 onClick={() => deleteList(list.id)}
-                className="bg-red-500 text-white p-2 rounded"
+                // className="bg-red-500 text-white p-2 rounded"
               >
                 Delete
-              </button>
+              </Trash2>
               <div></div>
             </li>
             <ListItems

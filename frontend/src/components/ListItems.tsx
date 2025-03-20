@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Trash2 } from "lucide-react";
 
 interface ListItemProps{
     token: string;
@@ -77,21 +78,32 @@ export default function ListItems ({ token, api, listId, logout }: ListItemProps
 
 
     return (
-        <div className="space-y-4">
-            <div className = "ItemsCard">
-            <input
-                value={newListItemText}
-                onChange={(e) => setNewListItemText(e.target.value)}
-                className="border p-2 rounded w-full"
-                placeholder="New list item"
-            />
-            <button onClick={createListItem} className="bg-blue-500 text-white p-2 rounded w-full addButton">Create Item</button>
-            </div>
-            {listItems.map((item) => (
-                <div key={item.id} className="bg-gray-200 p-4 rounded-md listItems">
-                    {item.content}
-                </div>
-            ))}
+      <div className="space-y-4">
+        <div className="ItemsCard">
+          <input
+            value={newListItemText}
+            onChange={(e) => setNewListItemText(e.target.value)}
+            className="border p-2 rounded w-full"
+            placeholder="New list item"
+          />
+          <button
+            onClick={createListItem}
+            className="bg-blue-500 text-white p-2 rounded w-full addButton"
+          >
+            Create Item
+          </button>
         </div>
+        {listItems.map((item) => (
+          <div key={item.id} className="bg-gray-200 p-4 rounded-md listItems">
+            <span>{item.content}</span>{" "}
+            <button
+              onClick={() => deleteItem(item.id)}
+              className="p-2 rounded bg-red-500 text-white"
+            >
+              <Trash2 size={20} /> {/* Trash Icon */}
+            </button>
+          </div>
+        ))}
+      </div>
     );
 }

@@ -42,6 +42,16 @@ def login():
         return jsonify(access_token=access_token)
     return jsonify({"error": "Invalid credentials"}), 401
 
+# Get user
+@app.route('/user', methods=['GET'])
+@jwt_required()
+def get_user():
+    user_id = get_jwt_identity()
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify({"id": user.id, "username": user.username}), 200
+
 
 # Create list
 @app.route('/lists', methods=['POST'])

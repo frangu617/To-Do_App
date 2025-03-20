@@ -1,3 +1,5 @@
+/* @import "tailwindcss"; */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -35,8 +37,96 @@
 
 .card {
   padding: 2em;
+  border: 1px solid white;
+  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  gap: 10px;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.listCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.listI {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1%;
+  background-color: lightgray;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: black;
+}
+
+li.listI {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  align-items: flex-end;
+  box-shadow: #ffffff 1px 1px 1px 1px;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin: 0px;
+}
+
+.addButton{
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+
+input{
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+
+.ItemsCard{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid white;
+  padding: 10px;
+  background-color: rgb(124, 124, 124);
+}
+
+h1 {
+  border: 5px solid white;
+  padding:20px;
+  border-radius: 20px;
+}
+
+h1:hover {
+  background-color: navy;
+}
+
+input {
+  width: 300px;
 }

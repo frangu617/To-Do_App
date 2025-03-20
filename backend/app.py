@@ -111,6 +111,15 @@ def get_lists():
         for lst in lists
     ]}), 200
 
+# Get items from a list
+@app.route('/lists/<int:list_id>/items', methods=['GET'])
+@jwt_required()
+def get_items(list_id):
+    items = TodoItem.query.filter_by(list_id=list_id).all()
+    return jsonify({"items": [
+        {'id': item.id, 'list_id': item.list_id, 'content': item.content, 'updated_at': item.updated_at.isoformat()}
+        for item in items
+    ]}), 200
 
 
 # Share list with other users (view-only)

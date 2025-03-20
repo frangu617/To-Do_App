@@ -39,14 +39,14 @@ export default function Login({ setToken, api, switchToRegister }: LoginProps) {
       <br />
       <button
         onClick={login}
-        className="bg-blue-500 text-white p-2 rounded w-full loginB"
+        className="bg-blue-500 text-white p-2 rounded w-full "
       >
         Login
       </button>
       <br />
       <button
         onClick={switchToRegister}
-        className="text-blue-500 underline w-full"
+        className="text-blue-500 underline w-full addButton"
       >
         {" "}
         Don't have an account? Register

@@ -21,17 +21,35 @@ export default function Register ({api, switchToLogin}: RegisterProps) {
     };
 
     return (
-        <div className="space-y-4">
-            <input value={username} placeholder="Username"
-                className="border p-2 rounded w-full"
-                onChange={(e) => setUsername(e.target.value)}
-            />
-            <input value={password} placeholder="Password" type="password"
-                className="border p-2 rounded w-full"
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button onClick={register} className="bg-blue-500 text-white p-2 rounded w-full">Register</button>
-            <button onClick={switchToLogin} className="text-blue-500 underline w-full">Already have an account? Log in</button>
-        </div>
+      <div className="space-y-4">
+        <input
+          value={username}
+          placeholder="Username"
+          className="border p-2 rounded w-full"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          value={password}
+          placeholder="Password"
+          type="password"
+          className="border p-2 rounded w-full"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button
+          onClick={register}
+          className="bg-blue-500 text-white p-2 rounded w-full"
+        >
+          Register
+        </button>
+        <br />
+        <button
+          onClick={switchToLogin}
+          className="text-blue-500 underline w-full addButton"
+        >
+          Already have an account? Log in
+        </button>
+      </div>
     );
 }

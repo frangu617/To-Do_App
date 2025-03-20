@@ -45,6 +45,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-top: 1em;
 }
 button:hover {
   border-color: #646cff;
@@ -52,6 +53,28 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.listI{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1%;
+  background-color: lightgray;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: black;
+}
+
+li.listI{
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  align-items: flex-end;
+  box-shadow: #ffffff 1px 1px 1px 1px;
 }
 
 @media (prefers-color-scheme: light) {
